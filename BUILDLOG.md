@@ -50,6 +50,8 @@ It could detect all the settings.
 
 https://vite-react-wordle-clone.vercel.app/
 
+The most pleasant part was the confetti
+<img width="1306" alt="Colourful confetti streaming down success screen after deploying successfully to Vercel" src="https://user-images.githubusercontent.com/1307818/203489992-8858056f-b387-4f09-a7e0-c5de830ea19f.png">
 
 
 ### 2022-11-22
