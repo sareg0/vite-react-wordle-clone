@@ -80,10 +80,12 @@ Despite initial confusion on my part,
 it felt like the installation of the test libraries went relatively smoothly
 
 I have another project with some initial work to trim a list down to a list of
-5 letter words.
+5 letter words in Node. Mainly to do a knowledge check.
+https://github.com/sareg0/wordle-clone
 
 
-Difficulties
+
+__Difficulties__
 1. Putting all the information together
 2. Test failures
 When trying to query the form element for the board, I kept getting a failure: 
@@ -113,8 +115,8 @@ This is what allowed `getByRole('form')` to work correctly.
 
 
 Some things to add/fix:
-* adding a linter
-* adding a formatter
+* adding a linter ✅ (2022-11-23)
+* adding a formatter ✅ (2022-11-23)
 * removing Storybook boilerplate
 
 The idea is to be as Test-Driven as possible and implemented accessibility testing at the beginning of the project. 
