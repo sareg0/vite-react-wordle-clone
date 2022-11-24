@@ -1,5 +1,15 @@
 ### 2022-11-24
+* TDD Wordle: https://youtu.be/e2ypufHTMu4 (watched another 30 minutes of this)
 
+TDD loop. What are the rules we care about?
+do not test implementation details; Express the what, not the how
+
+First test (stolen from the video)
+When a user creates a new game
+It should be any empty 6 x 5 grid, where each tile of the gird is empty
+
+
+I like that he wrote this all down
 
 ### 2022-11-23
 Really need some linting and formatting. It's already getting hard to read
@@ -50,6 +60,16 @@ It could detect all the settings.
 
 https://vite-react-wordle-clone.vercel.app/
 
+
+Now I'm thinking about storbyook
+https://storybook.js.org/blog/storybook-for-vite/
+It looks like it does not have a webpack config and is
+using Vite by default. 
+
+Adding @storybook/addon-a11y
+Building storybook fails. 
+
+aha it was a spelling error on my part 🙈
 
 
 ### 2022-11-22
