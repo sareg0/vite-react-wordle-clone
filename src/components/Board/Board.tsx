@@ -1,51 +1,36 @@
-// import './Input.css'
+import "./Board.css";
+import React from "react";
 import { Input } from "../Input/Input";
 
-export const Board = () => {
+const ROWS = 6;
+const LETTERS = 5;
+
+const BoardRow = ({ rowNumber }: { rowNumber: number }) => {
+  const isDisabled = rowNumber !== 0;
   return (
-    <form name="board" title="guesses">
-      <fieldset>
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-      </fieldset>
-      <fieldset>
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-      </fieldset>
-      <fieldset>
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-      </fieldset>
-      <fieldset>
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-      </fieldset>
-      <fieldset>
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-      </fieldset>
-      <fieldset>
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-      </fieldset>
+    <fieldset disabled={isDisabled}>
+      {[...Array(LETTERS)].map((_, index) => (
+        <Input
+          letter=""
+          index={index}
+          row={rowNumber}
+          key={`${index}${index}`}
+        />
+      ))}
+    </fieldset>
+  );
+};
+
+export const Board = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("handleSubmit yo");
+  };
+  return (
+    <form name="board" title="guesses" onSubmit={handleSubmit}>
+      {[...Array(ROWS)].map((_, index) => (
+        <BoardRow rowNumber={index} key={`row${index}`} />
+      ))}
       <input type="submit" />
     </form>
   );
