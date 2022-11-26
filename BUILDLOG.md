@@ -1,3 +1,17 @@
+### 2022-11-26
+Expand tests. 
+Disable fields that aren't the first row
+Trying not to jump ahead too quick
+
+### 2022-11-25
+Triple
+arrange, act, assert
+The video says 
+* given (arrange)
+* when (act)
+* then (assert)
+
+start to create the public API of our game - 35m20s
 ### 2022-11-24
 * TDD Wordle: https://youtu.be/e2ypufHTMu4 (watched another 30 minutes of this)
 
