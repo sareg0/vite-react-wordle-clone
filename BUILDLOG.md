@@ -15,6 +15,10 @@ start to create the public API of our game - 35m20s
 ### 2022-11-24
 * TDD Wordle: https://youtu.be/e2ypufHTMu4 (watched another 30 minutes of this)
 
+### 2022-11-24
+TDD Wordle: https://youtu.be/e2ypufHTMu4 
+
+Notes:
 TDD loop. What are the rules we care about?
 do not test implementation details; Express the what, not the how
 
@@ -74,6 +78,9 @@ It could detect all the settings.
 
 https://vite-react-wordle-clone.vercel.app/
 
+The most pleasant part was the confetti
+<img width="1306" alt="Colourful confetti streaming down success screen after deploying successfully to Vercel" src="https://user-images.githubusercontent.com/1307818/203489992-8858056f-b387-4f09-a7e0-c5de830ea19f.png">
+
 
 Now I'm thinking about storbyook
 https://storybook.js.org/blog/storybook-for-vite/
@@ -113,9 +120,9 @@ it felt like the installation of the test libraries went relatively smoothly
 
 I have another project with some initial work to trim a list down to a list of
 5 letter words.
+https://github.com/sareg0/wordle-clone
 
-
-Difficulties
+__Difficulties__
 1. Putting all the information together
 2. Test failures
 When trying to query the form element for the board, I kept getting a failure: 
@@ -145,8 +152,8 @@ This is what allowed `getByRole('form')` to work correctly.
 
 
 Some things to add/fix:
-* adding a linter
-* adding a formatter
+* adding a linter ✅ (2022-11-23)
+* adding a formatter ✅ (2022-11-23)
 * removing Storybook boilerplate
 
 The idea is to be as Test-Driven as possible and implemented accessibility testing at the beginning of the project. 
