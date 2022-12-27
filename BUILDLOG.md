@@ -1,7 +1,160 @@
+### 2022-12-27
+A busy few weeks. Have not had the time to do anything
+Able to spend 1.5 hours this morning. 
+
+Let's rock.
+
+What does it mean when the lines iwth the Total TS extension are blue?
+
+Oh, okay. I have to mark it as learned to have it go away. 
+Hmm... That was not obvious
+
+When I mark as learned where does that information go? Also it's quite slow
+to process it at first. I experienced the same with the TypeChallenges extension.
+
+Open Source. I want to start an open source project which gains money. 
+
+I can't remember why I spearated the BoardRow
+
+Okay, time's up. 
+I just realised that I jumped straight into coding, and it was not that helpful
+
+The idea is to do TDD where possible. 
+Instead of futzing with the BoardRow code, I maybe should have started with a test.
+
+Stopping point. 
+Created a way to capture the changing guesses in the BoardRow
+
+The new React docs are very helpful
+https://beta.reactjs.org/learn/updating-arrays-in-state#replacing-items-in-an-array
+
+Having worked with Vue for a bit, it's hard to remember that one shouldn't mutate
+arrays (because in React the array is not Reactive), and you need to create a new Array
+to set the state. 
+
+### 2022-12-06
+Oops. 
+It's been a hot minute since I did anything
+Got distracted by Advent of Code for a few days.
+
+I stumbled across this video from Ben Myers
+https://www.youtube.com/watch?v=qMvQG47kzJ4
+
+did not know. 
+* tables need captions. 4m03s
+
+
+Okay.. Trying not to get too distracted by that video, but
+an interesting idea to try. Maybe for the next implementation
+
+I actually have like three videos I could watch to correct this app 🤣
+
+I'll just try finishing this myself first and then improve it.
+
+Okay, starting with a failing test. Now I remember I had to stop 
+because I had to start work. 
+
+Kind of gives me a good starting point ;D
+
+```
+TestingLibraryElementError: Unable to find an accessible element with the role "alert"
+```
+```
+expect(screen.getByRole("alert")).toHaveTextContent("word is too short");
+```
+Changed to title
+```
+expect(screen.getByText("word is too short")).toBeInTheDocument();
+```
+
+The error about using a window.alert is below
+```
+Error: Not implemented: window.alert
+```
+
+So I understand that I need to mock the window
+https://stackoverflow.com/questions/55787988/window-alert-not-implemented-when-running-tests
+
+"Sometimes all you need is to validate whether or not a specific function has been called (and possibly which arguments were passed). In these cases a spy would be all we need which you can use directly with vi.spyOn() (read more here)." - https://vitest.dev/guide/mocking.html#functions
+
+Should I 
+* spyOn?
+* mock the implementation using `vi.fn()`
+* stub the global?
+
+
+The difference between them
+* spyOn is good for seeing a function has been called
+* spies cannot help you alter the implementation of the function
+* my assumption is that `Error: Not implemented: window.alert` indicates I need
+to implement the window
+
+I am tempted to just avoid using window. 
+
+I could try another implementation 
+I did. Went with div of role alert
+
+Stopping point. splitting out the Board Row from the Board file
+
+
+### 2022-11-30
+Using user events is very intuitive. 
+
+I am trying to validate that a word is too short, and 
+that an alert shows when a user tries to submit a too short word.
+
+However, trying to implement a window.alert in React and testing
+for its existence int the test fails with 
+
+
+```
+Error: Not implemented: window.alert
+```
+What does `Error: Not implemented: ` mean?
+What is the right thing to do about it. 
+Most examples involve Jest.
+
+I still don't get if jest-dom is the right package. 
+
+Do I need to do this? 
+https://vitest.dev/guide/mocking.html#globals
+
+
+Okay, I am also looking at alternatives
+aria-alert? Would that work in the test environmnet?
+Also, woah, look at these form validity state things:
+
+https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooShort
+
+
+
+### 2022-11-29
+Woah, where did the last few days go. 
+
+Concentrating on validating the guesses this week. 
+
+What is the difference between 
+testing library 'jest-dom' and 'dom'?
+https://github.com/testing-library/dom-testing-library
+https://github.com/testing-library/jest-dom
+
+Ah, they have a comment in this code; 
+
+https://testing-library.com/docs/dom-testing-library/example-intro
+```
+} from '@testing-library/dom'
+// adds special assertions like toHaveTextContent
+import '@testing-library/jest-dom'
+```
+
+https://testing-library.com/docs/user-event/intro
+Test a word that is too short... show an alert/error
 ### 2022-11-26
 Expand tests. 
 Disable fields that aren't the first row
 Trying not to jump ahead too quick
+
+https://kentcdodds.com/blog/common-mistakes-with-react-testing-library#not-using-testing-libraryuser-event
 
 ### 2022-11-25
 Triple
